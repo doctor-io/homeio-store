@@ -1,6 +1,7 @@
 name: validate
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches: [main]
@@ -25,6 +26,8 @@ jobs:
           base="${{ github.event.pull_request.base.sha || github.event.before }}"
           # A first push has no earlier commit: compare with the empty tree.
           [ "$base" = "0000000000000000000000000000000000000000" ] && base=$(git hash-object -t tree /dev/null)
+          # Run by hand, it starts every app.
+          [ "${{ github.event_name }}" = "workflow_dispatch" ] && base=$(git hash-object -t tree /dev/null)
           ids=$(git diff --name-only "$base" HEAD -- Apps | cut -d/ -f2 | sort -u \
             | while read -r id; do if [ -d "Apps/$id" ] && [ ! -e "Apps/$id/.no-smoke" ]; then echo "$id"; fi; done)
           [ -z "$ids" ] || npm run smoke -- $ids
