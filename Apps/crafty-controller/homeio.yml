@@ -1,0 +1,15 @@
+id: crafty-controller
+name: "Crafty Controller"
+tagline:
+  en: "Run and manage Minecraft servers from a web panel."
+  fr: "Lancez et gérez des serveurs Minecraft depuis un panneau web."
+description:
+  en: "Crafty Controller creates and manages Minecraft servers, Java and Bedrock, from one web panel. Start, stop and back up your worlds, install mods and plugins, and watch the console live. The first administrator password is generated for you and saved in the config folder, in a file named default-creds.txt."
+  fr: "Crafty Controller crée et gère des serveurs Minecraft, Java et Bedrock, depuis un seul panneau web. Démarrez, arrêtez et sauvegardez vos mondes, installez des mods et des plugins, et suivez la console en direct. Le mot de passe du premier administrateur est généré pour vous et enregistré dans le dossier de configuration, dans un fichier nommé default-creds.txt."
+category: games
+developer: "Crafty Controller"
+website: https://craftycontrol.com
+main: crafty-controller
+scheme: https
+port: 8443
+index: /

@@ -92,7 +92,10 @@ for (const id of ids) {
   try {
     console.log(`${id}: pulling and starting`);
     docker(["compose", "-p", project, "-f", composePath, "up", "-d", "--pull", "missing"], { env });
-    const url = `http://localhost:${hostPort}${meta.index ?? "/"}`;
+    const scheme = meta.scheme ?? "http";
+    // Self-hosted apps on https mostly carry a certificate nobody signed.
+    if (scheme === "https") process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    const url = `${scheme}://localhost:${hostPort}${meta.index ?? "/"}`;
     const ok = await waitForHttp(url, 180_000);
     console.log(`${id}: ${ok ? "ok" : "FAILED"} (${url})`);
     if (!ok) {

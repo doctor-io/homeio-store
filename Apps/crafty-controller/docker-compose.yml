@@ -1,0 +1,31 @@
+name: crafty-controller
+services:
+  crafty-controller:
+    image: registry.gitlab.com/crafty-controller/crafty-4:4.11.0
+    container_name: crafty-controller
+    restart: unless-stopped
+    environment:
+      TZ: Etc/UTC
+    ports:
+      - target: 8443
+        published: "8444"
+        protocol: tcp
+      - target: 25565
+        published: "25565"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /crafty/app/config
+      - type: bind
+        source: /DATA/AppData/$AppID/servers
+        target: /crafty/servers
+      - type: bind
+        source: /DATA/AppData/$AppID/backups
+        target: /crafty/backups
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /crafty/logs
+      - type: bind
+        source: /DATA/AppData/$AppID/import
+        target: /crafty/import

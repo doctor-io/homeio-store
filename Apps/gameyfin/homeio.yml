@@ -1,0 +1,13 @@
+id: gameyfin
+name: "Gameyfin"
+tagline:
+  en: "A tidy library for the games you own."
+  fr: "Une bibliothèque soignée pour les jeux que vous possédez."
+description:
+  en: "Gameyfin turns a folder of games into a browsable library with covers, descriptions and screenshots fetched automatically. Search, filter and download your collection from any device. The first visit creates the administrator account."
+  fr: "Gameyfin transforme un dossier de jeux en bibliothèque à parcourir, avec jaquettes, descriptions et captures récupérées automatiquement. Cherchez, filtrez et téléchargez votre collection depuis n'importe quel appareil. La première visite crée le compte administrateur."
+category: games
+developer: "Gameyfin"
+website: https://gameyfin.org
+main: gameyfin
+port: 8080

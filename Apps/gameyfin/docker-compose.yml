@@ -1,0 +1,33 @@
+name: gameyfin
+services:
+  gameyfin:
+    image: ghcr.io/gameyfin/gameyfin:2.4.0
+    container_name: gameyfin
+    restart: unless-stopped
+    # Gameyfin refuses to start without a key of its own. One shared by every
+    # install would not be a secret, so each install makes its own the first
+    # time it starts and keeps it with its data.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        f=/opt/gameyfin/data/.app_key
+        # A UUID without its dashes: 32 hex digits, valid base64 that decodes to
+        # 24 bytes, which is an AES key length.
+        [ -s $$f ] || { IFS=- read a b c d e < /proc/sys/kernel/random/uuid; echo "$$a$$b$$c$$d$$e" > $$f; }
+        read APP_KEY < $$f
+        export APP_KEY
+        exec /usr/bin/tini -- /entrypoint.sh
+    ports:
+      - target: 8080
+        published: "8092"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /opt/gameyfin/db
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /opt/gameyfin/data
+      - type: bind
+        source: /DATA/AppData/$AppID/library
+        target: /opt/gameyfin/library

@@ -25,7 +25,7 @@ const profile = mkdtempSync(path.join(os.tmpdir(), "homeio-shoot-"));
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const chrome = spawn(chromePath, [
-  "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
+  "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run", "--ignore-certificate-errors",
   `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`, "--window-size=1280,800", "about:blank",
 ], { stdio: "ignore" });
 
