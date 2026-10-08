@@ -1,0 +1,22 @@
+id: portainer
+name: Portainer
+tagline:
+  en: See and manage every container from a web page.
+  fr: Voyez et gérez tous vos conteneurs depuis une page web.
+description:
+  en: |
+    Portainer shows your containers, images, volumes and networks and lets you start,
+    stop, inspect and update them from the browser. It controls Docker on this server
+    through the Docker socket, so give the admin account to someone you trust. To create
+    the admin account, copy the setup token from the app's logs.
+  fr: |
+    Portainer affiche vos conteneurs, images, volumes et réseaux et permet de les
+    démarrer, arrêter, inspecter et mettre à jour depuis le navigateur. Il pilote Docker
+    sur ce serveur par le socket Docker : réservez le compte administrateur à quelqu'un
+    de confiance. Pour créer le compte
+    administrateur, copiez le jeton de configuration affiché dans les journaux de l'app.
+category: development
+developer: Portainer
+website: https://www.portainer.io
+main: portainer
+port: 9000

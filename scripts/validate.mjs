@@ -62,7 +62,9 @@ for (const id of appIds) {
     for (const volume of service.volumes ?? []) {
       const source = typeof volume === "string" ? volume.split(":")[0] : volume.source;
       // Media apps share the user's own library: /DATA/Media and /DATA/Download.
-      const shared = /^\/DATA\/(Media|Download)(\/|$)/.test(source ?? "");
+      // The Docker socket is allowed for apps whose job is managing containers; the
+      // description has to say so.
+      const shared = /^\/DATA\/(Media|Download)(\/|$)/.test(source ?? "") || source === "/var/run/docker.sock";
       if (typeof source === "string" && source.startsWith("/") && !shared && !source.startsWith("/DATA/AppData/$AppID")) {
         fail(id, `service "${name}" mounts ${source}; app data must live under /DATA/AppData/$AppID (or the shared /DATA/Media and /DATA/Download)`);
       }

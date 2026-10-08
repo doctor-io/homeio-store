@@ -1,0 +1,22 @@
+id: photoprism
+name: PhotoPrism
+tagline:
+  en: Browse and search your photos with on-device AI.
+  fr: Parcourez et cherchez vos photos avec une IA locale.
+description:
+  en: |
+    PhotoPrism indexes the pictures in your Media/Pictures folder and lets you search
+    them by place, people, colour and content, all on your own server. You sign in as
+    admin with a password made for your install: read it in the file admin_password in
+    the app's storage folder, then change it in the settings.
+  fr: |
+    PhotoPrism indexe les images de votre dossier Media/Pictures et vous laisse les
+    chercher par lieu, personnes, couleur et contenu, le tout sur votre propre serveur.
+    Vous vous connectez en admin avec un mot de passe généré pour votre installation :
+    lisez-le dans le fichier admin_password du dossier de stockage de l'app, puis
+    changez-le dans les réglages.
+category: productivity
+developer: PhotoPrism
+website: https://www.photoprism.app
+main: photoprism
+port: 2342

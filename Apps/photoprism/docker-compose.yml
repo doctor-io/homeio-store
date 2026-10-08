@@ -1,0 +1,38 @@
+name: photoprism
+services:
+  photoprism:
+    image: photoprism/photoprism:261007
+    container_name: photoprism
+    restart: unless-stopped
+    # The admin password is made on first start and kept in the storage folder, so
+    # every install has its own.
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        f=/photoprism/storage/admin_password
+        mkdir -p /photoprism/storage
+        if [ ! -s "$$f" ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          printf '%s' "$${a//-/}" > "$$f"
+        fi
+        export PHOTOPRISM_ADMIN_PASSWORD="$$(cat $$f)"
+        exec /init
+    environment:
+      PHOTOPRISM_ADMIN_USER: admin
+      PHOTOPRISM_AUTH_MODE: password
+      PHOTOPRISM_DISABLE_TLS: "true"
+      PHOTOPRISM_DEFAULT_TLS: "false"
+      PHOTOPRISM_SITE_URL: http://localhost:2342/
+      PHOTOPRISM_DATABASE_DRIVER: sqlite
+      PHOTOPRISM_UPLOAD_NSFW: "true"
+    ports:
+      - target: 2342
+        published: "2342"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/Media/Pictures
+        target: /photoprism/originals
+      - type: bind
+        source: /DATA/AppData/$AppID/storage
+        target: /photoprism/storage
