@@ -1,0 +1,17 @@
+name: kavita
+services:
+  kavita:
+    image: jvmilazz0/kavita:0.9.1
+    container_name: kavita
+    restart: unless-stopped
+    ports:
+      - target: 5000
+        published: "5004"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /kavita/config
+      - type: bind
+        source: /DATA/AppData/$AppID/books
+        target: /books

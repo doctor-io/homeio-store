@@ -1,0 +1,15 @@
+name: homer
+services:
+  homer:
+    image: b4bz/homer:v26.08.3
+    container_name: homer
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - target: 8080
+        published: "8094"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/assets
+        target: /www/assets

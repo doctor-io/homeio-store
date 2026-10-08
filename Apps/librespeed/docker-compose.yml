@@ -1,0 +1,17 @@
+name: librespeed
+services:
+  librespeed:
+    image: lscr.io/linuxserver/librespeed:6.3.0
+    container_name: librespeed
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+    ports:
+      - target: 80
+        published: "8093"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config

@@ -1,0 +1,19 @@
+id: librespeed
+name: LibreSpeed
+tagline:
+  en: Test the speed of your home network.
+  fr: Testez la vitesse de votre réseau local.
+description:
+  en: |
+    LibreSpeed measures download, upload, ping and jitter between your device and your
+    server. Handy to find out whether Wi-Fi or the cable is the slow part. No account,
+    no tracking, nothing leaves your network.
+  fr: |
+    LibreSpeed mesure le débit descendant, montant, le ping et la gigue entre votre
+    appareil et votre serveur. Pratique pour savoir si c'est le Wi-Fi ou le câble qui
+    ralentit. Pas de compte, pas de suivi, rien ne quitte votre réseau.
+category: development
+developer: LibreSpeed
+website: https://librespeed.org
+main: librespeed
+port: 80

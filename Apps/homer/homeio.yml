@@ -1,0 +1,20 @@
+id: homer
+name: Homer
+tagline:
+  en: A simple start page for all your services.
+  fr: Une page d'accueil simple pour tous vos services.
+description:
+  en: |
+    Homer is a static dashboard configured with one YAML file. Add your services as
+    tiles with icons and links, group them, and use it as the start page of every
+    browser at home. It is a single light container with no database.
+  fr: |
+    Homer est un tableau de bord statique configuré par un seul fichier YAML. Ajoutez
+    vos services en tuiles avec icônes et liens, groupez-les et faites-en la page
+    d'accueil de tous les navigateurs de la maison. Un seul conteneur léger, sans
+    base de données.
+category: development
+developer: bastienwirtz
+website: https://github.com/bastienwirtz/homer
+main: homer
+port: 8080

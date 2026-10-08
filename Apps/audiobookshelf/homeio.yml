@@ -1,0 +1,20 @@
+id: audiobookshelf
+name: Audiobookshelf
+tagline:
+  en: Your audiobooks and podcasts, streamed from home.
+  fr: Vos livres audio et podcasts, en streaming depuis chez vous.
+description:
+  en: |
+    Audiobookshelf serves your audiobook and podcast library to any browser or phone.
+    It remembers where you stopped, keeps one profile per person, and fetches podcast
+    episodes by itself. The first person to open it creates the admin account.
+  fr: |
+    Audiobookshelf diffuse votre bibliothèque de livres audio et de podcasts sur le
+    navigateur ou le téléphone. Il retient où vous vous êtes arrêté, garde un profil par
+    personne et télécharge les épisodes de podcast tout seul. La première personne qui
+    l'ouvre crée le compte administrateur.
+category: productivity
+developer: advplyr
+website: https://www.audiobookshelf.org
+main: audiobookshelf
+port: 80
