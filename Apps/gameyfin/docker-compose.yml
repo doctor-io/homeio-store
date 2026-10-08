@@ -7,6 +7,9 @@ services:
     # Gameyfin refuses to start without a key of its own. One shared by every
     # install would not be a secret, so each install makes its own the first
     # time it starts and keeps it with its data.
+    environment:
+      PUID: "1000"
+      PGID: "1000"
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |

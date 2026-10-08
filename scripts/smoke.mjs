@@ -51,14 +51,23 @@ function removeTmp(tmp) {
 }
 
 /**
- * Docker creates bind mounts owned by root. Homeio hands them to the service's
- * `user:` before it starts, so do the same here; a service without `user:` is
- * left as it is, which is also what happens on a real install.
+ * Homeio creates an app's folders as root and hands them to the user the
+ * service runs as: its `user:`, or failing that PUID/PGID. A service with
+ * neither keeps a root-owned folder. Do the same here, so a start that would
+ * fail on a real install fails here too.
  */
-function chownBindMounts(composeText, tmp) {
-  for (const service of Object.values(yaml.load(composeText.replaceAll("$AppID", "app")).services ?? {})) {
-    const owner = String(service.user ?? "");
-    if (!/^\d+:\d+$/.test(owner) || owner === "0:0") continue;
+function chownBindMounts(composeText, tmp, appId) {
+  const services = yaml.load(composeText.replaceAll("$AppID", appId)).services ?? {};
+  for (const service of Object.values(services)) {
+    const env = Array.isArray(service.environment)
+      ? Object.fromEntries(service.environment.map((e) => String(e).split("=")))
+      : (service.environment ?? {});
+    const user = String(service.user ?? "");
+    const owner = /^\d+:\d+$/.test(user)
+      ? user
+      : /^\d+$/.test(String(env.PUID ?? "")) && /^\d+$/.test(String(env.PGID ?? ""))
+        ? `${env.PUID}:${env.PGID}`
+        : "0:0";
     for (const volume of service.volumes ?? []) {
       if (volume.type !== "bind" || !volume.source.startsWith(tmp)) continue;
       mkdirSync(volume.source, { recursive: true });
@@ -96,7 +105,7 @@ for (const id of ids) {
     .replace(/^\s*container_name: .*\n/m, "");
   const composePath = path.join(tmp, "docker-compose.yml");
   writeFileSync(composePath, compose);
-  chownBindMounts(compose, tmp);
+  chownBindMounts(compose, tmp, id);
   const env = { ...process.env, AppID: id };
 
   try {
