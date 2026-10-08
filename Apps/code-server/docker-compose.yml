@@ -8,7 +8,7 @@ services:
     # uid 1000 by default and could not write to them.
     user: "0:0"
     environment:
-      PASSWORD: ""
+      PASSWORD: ${PASSWORD:-}
     ports:
       - target: 8080
         published: "8443"

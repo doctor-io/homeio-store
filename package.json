@@ -4,9 +4,12 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:down": "node scripts/smoke.mjs --down",
+    "webp": "node scripts/to-webp.mjs"
   },
   "devDependencies": {
-    "js-yaml": "4.1.0"
+    "js-yaml": "4.1.0",
+    "sharp": "0.35.4"
   }
 }

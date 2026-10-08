@@ -1,0 +1,15 @@
+id: anythingllm
+name: AnythingLLM
+tagline:
+  en: Chat with your own documents using any model.
+  fr: Discutez avec vos propres documents grâce au modèle de votre choix.
+description:
+  en: |
+    AnythingLLM turns your documents, web pages and notes into a private knowledge base you can chat with. It works with local models through Ollama or with hosted ones, and keeps everything in your own workspaces.
+  fr: |
+    AnythingLLM transforme vos documents, pages web et notes en base de connaissances privée avec laquelle discuter. Il fonctionne avec des modèles locaux via Ollama ou hébergés, et garde tout dans vos propres espaces de travail.
+category: ai
+developer: Mintplex Labs
+website: https://anythingllm.com
+main: anythingllm
+port: 3001

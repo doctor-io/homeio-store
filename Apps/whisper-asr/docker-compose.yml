@@ -1,0 +1,17 @@
+name: whisper-asr
+services:
+  whisper-asr:
+    image: onerahmet/openai-whisper-asr-webservice:v1.10.0
+    container_name: whisper-asr
+    restart: unless-stopped
+    environment:
+      ASR_MODEL: ${ASR_MODEL:-base}
+      ASR_ENGINE: openai_whisper
+    ports:
+      - target: 9000
+        published: "9000"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/cache
+        target: /root/.cache

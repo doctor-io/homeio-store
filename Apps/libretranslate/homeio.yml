@@ -1,0 +1,21 @@
+id: libretranslate
+name: LibreTranslate
+tagline:
+  en: Translate text between languages, privately.
+  fr: Traduisez des textes entre langues, en privé.
+description:
+  en: |
+    LibreTranslate is a self-hosted translation service with a simple web page and an API. Translation runs on your server, so your texts never leave your network. Language models are downloaded on first start.
+  fr: |
+    LibreTranslate est un service de traduction auto-hébergé, avec une page web simple et une API. La traduction se fait sur votre serveur : vos textes ne quittent jamais votre réseau. Les modèles de langues sont téléchargés au premier démarrage.
+category: ai
+developer: LibreTranslate
+website: https://libretranslate.com
+main: libretranslate
+port: 5000
+env:
+  LT_LOAD_ONLY:
+    label: { en: Languages, fr: Langues }
+    description:
+      en: Language codes to load, separated by commas. Fewer languages start faster and use less disk.
+      fr: Codes des langues à charger, séparés par des virgules. Moins de langues, c'est un démarrage plus rapide et moins de disque.

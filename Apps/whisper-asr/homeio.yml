@@ -1,0 +1,21 @@
+id: whisper-asr
+name: Whisper
+tagline:
+  en: Turn speech into text with a web page and an API.
+  fr: Transformez la parole en texte avec une page web et une API.
+description:
+  en: |
+    Whisper transcribes audio and video files into text in dozens of languages. Upload a file on the web page or call the API from your own tools. Everything runs on your server, and the model is downloaded on first use.
+  fr: |
+    Whisper transcrit des fichiers audio et vidéo en texte dans des dizaines de langues. Déposez un fichier sur la page web ou appelez l'API depuis vos propres outils. Tout tourne sur votre serveur, et le modèle est téléchargé à la première utilisation.
+category: ai
+developer: OpenAI
+website: https://github.com/ahmetoner/whisper-asr-webservice
+main: whisper-asr
+port: 9000
+env:
+  ASR_MODEL:
+    label: { en: Model, fr: Modèle }
+    description:
+      en: "Size of the model: tiny, base, small, medium or large. Bigger is more accurate and slower."
+      fr: "Taille du modèle : tiny, base, small, medium ou large. Plus grand, plus précis et plus lent."

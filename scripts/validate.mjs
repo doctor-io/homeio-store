@@ -74,6 +74,13 @@ for (const id of appIds) {
   const envKeys = Array.isArray(environment) ? environment.map((e) => e.split("=")[0]) : Object.keys(environment);
   for (const [key, entry] of Object.entries(meta.env ?? {})) {
     if (!envKeys.includes(key)) fail(id, `env ${key} is described but not in the compose environment`);
+    else {
+      const value = Array.isArray(environment)
+        ? environment.find((e) => e.startsWith(`${key}=`))?.slice(key.length + 1)
+        : environment[key];
+      // The answers land in the stack's .env, so the compose must read them.
+      if (!String(value).includes(`\${${key}`)) fail(id, `env ${key} must be written as \${${key}:-default} in the compose`);
+    }
     if (!isLocalized(entry.label) || !isLocalized(entry.description)) fail(id, `env ${key} needs label and description in en and fr`);
   }
 

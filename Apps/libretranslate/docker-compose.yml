@@ -1,0 +1,16 @@
+name: libretranslate
+services:
+  libretranslate:
+    image: libretranslate/libretranslate:v1.9.6
+    container_name: libretranslate
+    restart: unless-stopped
+    environment:
+      LT_LOAD_ONLY: ${LT_LOAD_ONLY:-en,fr,es,de}
+    ports:
+      - target: 5000
+        published: "5001"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/models
+        target: /home/libretranslate/.local

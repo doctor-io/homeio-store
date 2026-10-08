@@ -1,0 +1,15 @@
+id: ollama
+name: Ollama
+tagline:
+  en: Run open language models on your own hardware.
+  fr: Faites tourner des modèles de langage ouverts sur votre propre matériel.
+description:
+  en: |
+    Ollama downloads and runs open models such as Llama, Mistral and Gemma. It offers a simple API that apps like Open WebUI connect to. Models run on your server's processor, or on its graphics card when it has one.
+  fr: |
+    Ollama télécharge et fait tourner des modèles ouverts comme Llama, Mistral ou Gemma. Il propose une API simple à laquelle se connectent des apps comme Open WebUI. Les modèles utilisent le processeur de votre serveur, ou sa carte graphique s'il en a une.
+category: ai
+developer: Ollama
+website: https://ollama.com
+main: ollama
+port: 11434

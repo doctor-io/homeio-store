@@ -1,5 +1,6 @@
 // Starts each given app for real and waits for its web UI to answer.
-// Run: node scripts/smoke.mjs <appId> [appId ...]
+// Run: node scripts/smoke.mjs [--keep] <appId> [appId ...]
+// --keep leaves the apps running, to take screenshots; `--down` stops whatever --keep left.
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
@@ -7,9 +8,19 @@ import path from "node:path";
 import yaml from "js-yaml";
 
 const root = path.resolve(import.meta.dirname, "..");
-const ids = process.argv.slice(2);
+const keep = process.argv.includes("--keep");
+
+if (process.argv.includes("--down")) {
+  const projects = JSON.parse(execFileSync("docker", ["compose", "ls", "--all", "--format", "json"]).toString());
+  for (const { Name } of projects.filter(({ Name }) => Name.startsWith("homeio-smoke-"))) {
+    execFileSync("docker", ["compose", "-p", Name, "down", "-v"], { stdio: "pipe" });
+    console.log(`stopped ${Name}`);
+  }
+  process.exit(0);
+}
+const ids = process.argv.slice(2).filter((arg) => arg !== "--keep");
 if (ids.length === 0) {
-  console.error("usage: node scripts/smoke.mjs <appId> [appId ...]");
+  console.error("usage: node scripts/smoke.mjs [--keep] <appId> [appId ...]");
   process.exit(2);
 }
 
@@ -61,8 +72,12 @@ for (const [index, id] of ids.entries()) {
     failed += 1;
     console.error(`${id}: FAILED ${String(error.stderr ?? error.message)}`);
   } finally {
-    try { docker(["compose", "-p", project, "-f", composePath, "down", "-v"], { env }); } catch {}
-    rmSync(tmp, { recursive: true, force: true });
+    if (!keep) {
+      try { docker(["compose", "-p", project, "-f", composePath, "down", "-v"], { env }); } catch {}
+      rmSync(tmp, { recursive: true, force: true });
+      // A CI runner's disk does not hold every image of a big change at once.
+      if (process.env.CI) { try { docker(["image", "prune", "-af"]); } catch {} }
+    }
   }
 }
 process.exit(failed ? 1 : 0);

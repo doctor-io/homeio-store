@@ -1,0 +1,15 @@
+id: flowise
+name: Flowise
+tagline:
+  en: Build AI agents and chatbots by dragging blocks.
+  fr: Créez des agents et des chatbots IA en assemblant des blocs.
+description:
+  en: |
+    Flowise is a visual builder for AI workflows. Connect models, documents and tools on a canvas, test the result in a chat, then call it from your own apps through an API.
+  fr: |
+    Flowise est un éditeur visuel de workflows IA. Reliez modèles, documents et outils sur un canevas, testez le résultat dans un chat, puis appelez-le depuis vos propres apps via une API.
+category: ai
+developer: FlowiseAI
+website: https://flowiseai.com
+main: flowise
+port: 3000

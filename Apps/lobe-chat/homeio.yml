@@ -1,0 +1,26 @@
+id: lobe-chat
+name: LobeChat
+tagline:
+  en: A polished chat interface for all your AI models.
+  fr: Une interface de discussion soignée pour tous vos modèles d'IA.
+description:
+  en: |
+    LobeChat is a modern chat interface that works with OpenAI, Claude, Gemini and local models through Ollama. It supports agents, plugins, voice and image input. Your conversations stay in your browser.
+  fr: |
+    LobeChat est une interface de discussion moderne compatible avec OpenAI, Claude, Gemini et les modèles locaux via Ollama. Elle gère les agents, les plugins, la voix et les images. Vos conversations restent dans votre navigateur.
+category: ai
+developer: LobeHub
+website: https://lobehub.com
+main: lobe-chat
+port: 3210
+env:
+  ACCESS_CODE:
+    label: { en: Access code, fr: Code d'accès }
+    description:
+      en: Code needed to open LobeChat. Leave empty to let anyone on your network in.
+      fr: Code demandé pour ouvrir LobeChat. Laissez vide pour laisser entrer tout le réseau.
+  OLLAMA_PROXY_URL:
+    label: { en: Ollama address, fr: Adresse d'Ollama }
+    description:
+      en: Address of your Ollama server, for example http://192.168.1.10:11434.
+      fr: Adresse de votre serveur Ollama, par exemple http://192.168.1.10:11434.

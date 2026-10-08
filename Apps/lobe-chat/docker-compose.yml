@@ -1,0 +1,13 @@
+name: lobe-chat
+services:
+  lobe-chat:
+    image: lobehub/lobe-chat:1.143.3
+    container_name: lobe-chat
+    restart: unless-stopped
+    environment:
+      ACCESS_CODE: ${ACCESS_CODE:-}
+      OLLAMA_PROXY_URL: ${OLLAMA_PROXY_URL:-}
+    ports:
+      - target: 3210
+        published: "3210"
+        protocol: tcp

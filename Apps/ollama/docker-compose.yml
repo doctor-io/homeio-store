@@ -1,0 +1,14 @@
+name: ollama
+services:
+  ollama:
+    image: ollama/ollama:0.40.1
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - target: 11434
+        published: "11434"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/models
+        target: /root/.ollama
