@@ -1,0 +1,13 @@
+id: adminer
+name: "Adminer"
+tagline:
+  en: "Manage your databases from a single web page."
+  fr: "Gérez vos bases de données depuis une seule page web."
+description:
+  en: "Adminer is a full database manager in one small page. Connect to MySQL, MariaDB, PostgreSQL, SQLite and more, then browse tables, run queries, and import or export data. You enter the server and credentials each time you connect."
+  fr: "Adminer est un gestionnaire de bases de données complet dans une seule petite page. Connectez-vous à MySQL, MariaDB, PostgreSQL, SQLite et d'autres, puis parcourez les tables, exécutez des requêtes et importez ou exportez des données. Vous saisissez le serveur et les identifiants à chaque connexion."
+category: development
+developer: "Jakub Vrána"
+website: https://www.adminer.org
+main: adminer
+port: 8080

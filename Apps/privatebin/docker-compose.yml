@@ -1,0 +1,14 @@
+name: privatebin
+services:
+  privatebin:
+    image: privatebin/nginx-fpm-alpine:2.0.6
+    container_name: privatebin
+    restart: unless-stopped
+    ports:
+      - target: 8080
+        published: "8084"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /srv/data

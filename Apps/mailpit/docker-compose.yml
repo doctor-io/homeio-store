@@ -1,0 +1,19 @@
+name: mailpit
+services:
+  mailpit:
+    image: axllent/mailpit:v1.31.4
+    container_name: mailpit
+    restart: unless-stopped
+    environment:
+      MP_DATABASE: /data/mailpit.db
+    ports:
+      - target: 8025
+        published: "8025"
+        protocol: tcp
+      - target: 1025
+        published: "1025"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data

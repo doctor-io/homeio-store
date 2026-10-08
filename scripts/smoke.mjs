@@ -2,6 +2,7 @@
 // Run: node scripts/smoke.mjs [--keep] <appId> [appId ...]
 // --keep leaves the apps running, to take screenshots; `--down` stops whatever --keep left.
 import { execFileSync } from "node:child_process";
+import net from "node:net";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -27,6 +28,18 @@ if (ids.length === 0) {
 const docker = (args, options = {}) => execFileSync("docker", args, { stdio: "pipe", ...options });
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/** First port from `start` that nothing listens on, so runs never step on each other. */
+async function freePort(start) {
+  for (let port = start; ; port++) {
+    const free = await new Promise((resolve) => {
+      const server = net.createServer();
+      server.once("error", () => resolve(false));
+      server.listen(port, () => server.close(() => resolve(true)));
+    });
+    if (free) return port;
+  }
+}
+
 async function waitForHttp(url, timeoutMs) {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
@@ -42,10 +55,10 @@ async function waitForHttp(url, timeoutMs) {
 }
 
 let failed = 0;
-for (const [index, id] of ids.entries()) {
+for (const id of ids) {
   const meta = yaml.load(readFileSync(path.join(root, "Apps", id, "homeio.yml"), "utf8"));
   const tmp = mkdtempSync(path.join(os.tmpdir(), `homeio-store-${id}-`));
-  const hostPort = 29000 + index;
+  const hostPort = await freePort(29000);
   const project = `homeio-smoke-${id}`;
 
   // Bind mounts go to a temp folder and the web port moves out of the way, so

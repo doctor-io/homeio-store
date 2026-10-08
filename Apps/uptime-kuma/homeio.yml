@@ -1,0 +1,13 @@
+id: uptime-kuma
+name: "Uptime Kuma"
+tagline:
+  en: "Know when your sites and services go down."
+  fr: "Sachez quand vos sites et services tombent."
+description:
+  en: "Uptime Kuma checks websites, servers and ports at regular intervals and shows their history on a clean dashboard. It can notify you by email, Telegram, Discord and many other channels when something stops answering."
+  fr: "Uptime Kuma surveille des sites, serveurs et ports à intervalles réguliers et affiche leur historique sur un tableau de bord clair. Il peut vous prévenir par e-mail, Telegram, Discord et bien d'autres canaux quand quelque chose ne répond plus."
+category: development
+developer: "Louis Lam"
+website: https://uptime.kuma.pet
+main: uptime-kuma
+port: 3001

@@ -1,0 +1,13 @@
+id: gitea
+name: "Gitea"
+tagline:
+  en: "Host your own Git repositories, issues and pull requests."
+  fr: "Hébergez vos propres dépôts Git, tickets et pull requests."
+description:
+  en: "Gitea is a lightweight Git service with repositories, issues, pull requests, a wiki and a package registry. It is quick to run, uses little memory, and keeps your code on your own server. The first visit shows a short setup page."
+  fr: "Gitea est un service Git léger avec dépôts, tickets, pull requests, wiki et registre de paquets. Il démarre vite, consomme peu de mémoire et garde votre code sur votre propre serveur. La première visite affiche une courte page de configuration."
+category: development
+developer: "Gitea"
+website: https://about.gitea.com
+main: gitea
+port: 3000

@@ -1,0 +1,13 @@
+id: it-tools
+name: "IT-Tools"
+tagline:
+  en: "Handy tools for developers, all in one page."
+  fr: "Des outils pratiques pour développeurs, réunis sur une page."
+description:
+  en: "IT-Tools gathers dozens of small utilities that developers reach for every day: token and hash generators, encoders and decoders, JSON and YAML converters, cron and regex helpers, network calculators and more. Everything runs in your browser."
+  fr: "IT-Tools réunit des dizaines de petits utilitaires dont les développeurs ont besoin chaque jour : générateurs de jetons et de hachages, encodeurs et décodeurs, convertisseurs JSON et YAML, aides pour cron et regex, calculateurs réseau et plus encore. Tout s'exécute dans votre navigateur."
+category: development
+developer: "Corentin Thomasset"
+website: https://it-tools.tech
+main: it-tools
+port: 80

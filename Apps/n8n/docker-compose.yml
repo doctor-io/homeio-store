@@ -1,0 +1,17 @@
+name: n8n
+services:
+  n8n:
+    image: n8nio/n8n:2.43.2
+    container_name: n8n
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      N8N_SECURE_COOKIE: "false"
+    ports:
+      - target: 5678
+        published: "5678"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /home/node/.n8n

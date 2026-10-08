@@ -1,0 +1,16 @@
+name: gitea
+services:
+  gitea:
+    image: gitea/gitea:28.1.0
+    container_name: gitea
+    restart: unless-stopped
+    environment:
+      GITEA__database__DB_TYPE: sqlite3
+    ports:
+      - target: 3000
+        published: "3003"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data

@@ -1,0 +1,13 @@
+id: privatebin
+name: "PrivateBin"
+tagline:
+  en: "Share text and code snippets that the server cannot read."
+  fr: "Partagez du texte et du code que le serveur ne peut pas lire."
+description:
+  en: "PrivateBin is a minimalist pastebin where everything is encrypted in your browser before it is sent. Share code or notes with an expiry date, a password, or a burn-after-reading link. The server never sees the content."
+  fr: "PrivateBin est un pastebin minimaliste où tout est chiffré dans votre navigateur avant l'envoi. Partagez du code ou des notes avec une date d'expiration, un mot de passe ou un lien qui s'efface après lecture. Le serveur ne voit jamais le contenu."
+category: development
+developer: "PrivateBin"
+website: https://privatebin.info
+main: privatebin
+port: 8080

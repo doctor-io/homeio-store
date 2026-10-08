@@ -1,0 +1,13 @@
+id: mailpit
+name: "Mailpit"
+tagline:
+  en: "Catch the emails your apps send while you develop."
+  fr: "Interceptez les e-mails de vos apps pendant que vous développez."
+description:
+  en: "Mailpit is a fake mail server for development. Point your app at its SMTP port and every message it sends lands in a clean web inbox instead of reaching real people, with HTML preview, attachments and search."
+  fr: "Mailpit est un faux serveur de messagerie pour le développement. Pointez votre app vers son port SMTP et chaque message qu'elle envoie arrive dans une boîte web claire au lieu de partir vers de vraies personnes, avec aperçu HTML, pièces jointes et recherche."
+category: development
+developer: "Ralph Slooten"
+website: https://mailpit.axllent.org
+main: mailpit
+port: 8025

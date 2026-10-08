@@ -1,0 +1,15 @@
+name: verdaccio
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:6.10.5
+    container_name: verdaccio
+    restart: unless-stopped
+    user: "10001:65533"
+    ports:
+      - target: 4873
+        published: "4873"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/storage
+        target: /verdaccio/storage

@@ -1,0 +1,13 @@
+id: verdaccio
+name: "Verdaccio"
+tagline:
+  en: "A private npm registry and cache for your packages."
+  fr: "Un registre npm privé et un cache pour vos paquets."
+description:
+  en: "Verdaccio is a lightweight private npm registry. Publish your own packages without making them public, and let it cache what you install from npmjs so builds stay fast and keep working offline."
+  fr: "Verdaccio est un registre npm privé et léger. Publiez vos propres paquets sans les rendre publics, et laissez-le mettre en cache ce que vous installez depuis npmjs pour que les builds restent rapides et fonctionnent hors ligne."
+category: development
+developer: "Verdaccio"
+website: https://verdaccio.org
+main: verdaccio
+port: 4873

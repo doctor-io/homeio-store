@@ -1,0 +1,13 @@
+id: n8n
+name: "n8n"
+tagline:
+  en: "Automate tasks by connecting your apps and services."
+  fr: "Automatisez vos tâches en reliant vos apps et services."
+description:
+  en: "n8n is a workflow automation tool with hundreds of integrations. Build flows on a canvas that react to events, call APIs, move data between services and run on a schedule. Your workflows and credentials stay on your own server."
+  fr: "n8n est un outil d'automatisation avec des centaines d'intégrations. Construisez sur un canevas des flux qui réagissent à des événements, appellent des API, déplacent des données entre services et s'exécutent selon un horaire. Vos workflows et identifiants restent sur votre propre serveur."
+category: development
+developer: "n8n"
+website: https://n8n.io
+main: n8n
+port: 5678

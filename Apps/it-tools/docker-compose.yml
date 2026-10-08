@@ -1,0 +1,10 @@
+name: it-tools
+services:
+  it-tools:
+    image: corentinth/it-tools:2024.10.22-7ca5933
+    container_name: it-tools
+    restart: unless-stopped
+    ports:
+      - target: 80
+        published: "8082"
+        protocol: tcp

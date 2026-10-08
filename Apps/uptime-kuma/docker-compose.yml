@@ -1,0 +1,14 @@
+name: uptime-kuma
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2.5.5
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - target: 3001
+        published: "3004"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /app/data
