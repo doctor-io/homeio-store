@@ -5,18 +5,12 @@ services:
     container_name: docmost
     restart: unless-stopped
     user: "1000:1000"
-    # The app secret is made on first start and kept in the secrets folder; the
-    # database password comes from the same folder, so every install has its own.
+    # Both secrets are made by the database on first start and kept in the secrets
+    # folder, so every install has its own; the app only reads them.
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |
-        f=/secrets/app_secret
-        if [ ! -s "$$f" ]; then
-          read -r a < /proc/sys/kernel/random/uuid
-          read -r b < /proc/sys/kernel/random/uuid
-          printf '%s%s' "$$a" "$$b" | tr -d - > "$$f"
-        fi
-        export APP_SECRET="$$(cat $$f)"
+        export APP_SECRET="$$(cat /secrets/app_secret)"
         export DATABASE_URL="postgresql://docmost:$$(cat /secrets/db_pass)@docmost-db:5432/docmost"
         exec docker-entrypoint.sh pnpm start
     environment:
@@ -52,6 +46,12 @@ services:
           read -r a < /proc/sys/kernel/random/uuid
           printf '%s' "$$a" | tr -d - > "$$f"
         fi
+        if [ ! -s /secrets/app_secret ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          read -r b < /proc/sys/kernel/random/uuid
+          printf '%s%s' "$$a" "$$b" | tr -d - > /secrets/app_secret
+        fi
+        chmod 644 /secrets/db_pass /secrets/app_secret
         export POSTGRES_PASSWORD="$$(cat $$f)"
         exec docker-entrypoint.sh postgres
     environment:
