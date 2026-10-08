@@ -4,12 +4,11 @@ services:
     image: searxng/searxng:2026.10.7-6671d89be
     container_name: searxng
     restart: unless-stopped
+    # Run as the image's own user from the start: it then owns its config folder
+    # and needs no capability at all.
+    user: "977:977"
     cap_drop:
       - ALL
-    cap_add:
-      - CHOWN
-      - SETGID
-      - SETUID
     ports:
       - target: 8080
         published: "8081"
