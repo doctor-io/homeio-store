@@ -9,6 +9,8 @@ categories:
     name: { en: Development, fr: Développement }
   - id: productivity
     name: { en: Productivity, fr: Productivité }
+  - id: media
+    name: { en: Media, fr: Médias }
 
 # Apps shown first in the store, in this order.
 featured:

@@ -1,0 +1,20 @@
+id: nocodb
+name: NocoDB
+tagline:
+  en: Turn a database into a spreadsheet your team can edit.
+  fr: Transformez une base de données en tableur modifiable à plusieurs.
+description:
+  en: |
+    NocoDB gives you an Airtable-style interface: grids, forms, galleries and kanban
+    boards on top of your data, with sharing, filters and an API for free. Data stays in
+    a local SQLite file. The first person to open it creates the admin account.
+  fr: |
+    NocoDB offre une interface façon Airtable : grilles, formulaires, galeries et
+    tableaux kanban sur vos données, avec partage, filtres et API. Les données restent
+    dans un fichier SQLite local. La première personne qui l'ouvre crée le compte
+    administrateur.
+category: productivity
+developer: nocodb
+website: https://nocodb.com
+main: nocodb
+port: 8080

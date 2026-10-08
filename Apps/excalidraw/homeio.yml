@@ -1,0 +1,19 @@
+id: excalidraw
+name: Excalidraw
+tagline:
+  en: A virtual whiteboard for hand-drawn diagrams.
+  fr: Un tableau blanc virtuel pour des schémas dessinés à la main.
+description:
+  en: |
+    Excalidraw is a whiteboard that makes diagrams look sketched by hand. Draw boxes,
+    arrows and notes, export to an image or SVG, and keep everything in the browser.
+    No account and nothing to configure.
+  fr: |
+    Excalidraw est un tableau blanc qui donne aux schémas un aspect dessiné à la main.
+    Tracez des boîtes, des flèches et des notes, exportez en image ou en SVG et gardez
+    tout dans le navigateur. Pas de compte, rien à configurer.
+category: productivity
+developer: excalidraw
+website: https://excalidraw.com
+main: excalidraw
+port: 80

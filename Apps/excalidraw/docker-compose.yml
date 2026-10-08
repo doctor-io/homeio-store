@@ -1,0 +1,12 @@
+name: excalidraw
+services:
+  excalidraw:
+    # This image has no version tags, only commit ones; Renovate cannot order them,
+    # so bump it by hand.
+    image: excalidraw/excalidraw:sha-4bfc5bb
+    container_name: excalidraw
+    restart: unless-stopped
+    ports:
+      - target: 80
+        published: "8098"
+        protocol: tcp

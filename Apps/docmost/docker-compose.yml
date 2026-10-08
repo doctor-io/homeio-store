@@ -1,0 +1,81 @@
+name: docmost
+services:
+  docmost:
+    image: docmost/docmost:0.96.0
+    container_name: docmost
+    restart: unless-stopped
+    user: "1000:1000"
+    # The app secret is made on first start and kept in the secrets folder; the
+    # database password comes from the same folder, so every install has its own.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        f=/secrets/app_secret
+        if [ ! -s "$$f" ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          read -r b < /proc/sys/kernel/random/uuid
+          printf '%s%s' "$$a" "$$b" | tr -d - > "$$f"
+        fi
+        export APP_SECRET="$$(cat $$f)"
+        export DATABASE_URL="postgresql://docmost:$$(cat /secrets/db_pass)@docmost-db:5432/docmost"
+        exec docker-entrypoint.sh pnpm start
+    environment:
+      APP_URL: ${APP_URL:-http://localhost:3010}
+      REDIS_URL: redis://docmost-redis:6379
+    ports:
+      - target: 3000
+        published: "3010"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/storage
+        target: /app/data/storage
+      - type: bind
+        source: /DATA/AppData/$AppID/secrets
+        target: /secrets
+    depends_on:
+      docmost-db:
+        condition: service_healthy
+      docmost-redis:
+        condition: service_started
+
+  # Only reachable from this stack, with a password of its own.
+  docmost-db:
+    image: postgres:17.11-alpine
+    container_name: docmost-db
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        f=/secrets/db_pass
+        if [ ! -s "$$f" ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          printf '%s' "$$a" | tr -d - > "$$f"
+        fi
+        export POSTGRES_PASSWORD="$$(cat $$f)"
+        exec docker-entrypoint.sh postgres
+    environment:
+      POSTGRES_DB: docmost
+      POSTGRES_USER: docmost
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: /DATA/AppData/$AppID/secrets
+        target: /secrets
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docmost -d docmost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  docmost-redis:
+    image: redis:8.8.3-alpine
+    container_name: docmost-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory-policy", "noeviction"]
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/redis
+        target: /data

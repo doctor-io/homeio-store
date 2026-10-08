@@ -1,0 +1,14 @@
+name: nocodb
+services:
+  nocodb:
+    image: nocodb/nocodb:2026.09.1
+    container_name: nocodb
+    restart: unless-stopped
+    ports:
+      - target: 8080
+        published: "8097"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /usr/app/data

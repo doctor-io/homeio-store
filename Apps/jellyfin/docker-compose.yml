@@ -1,0 +1,21 @@
+name: jellyfin
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:12.2.20261005-225228
+    container_name: jellyfin
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - target: 8096
+        published: "8096"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/$AppID/cache
+        target: /cache
+      - type: bind
+        source: /DATA/AppData/$AppID/media
+        target: /media

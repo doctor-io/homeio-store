@@ -1,0 +1,26 @@
+id: docmost
+name: Docmost
+tagline:
+  en: A wiki and team docs, like Notion, on your server.
+  fr: Un wiki et des documents d'équipe, façon Notion, sur votre serveur.
+description:
+  en: |
+    Docmost is a collaborative wiki. Write pages together in real time, organise them
+    in spaces, add comments, diagrams and attachments, and control who sees what.
+    The first person to open it creates the workspace and its admin account.
+  fr: |
+    Docmost est un wiki collaboratif. Rédigez des pages à plusieurs en temps réel,
+    rangez-les dans des espaces, ajoutez commentaires, schémas et pièces jointes, et
+    décidez qui voit quoi. La première personne qui l'ouvre crée l'espace de travail et
+    son compte administrateur.
+category: productivity
+developer: docmost
+website: https://docmost.com
+main: docmost
+port: 3000
+env:
+  APP_URL:
+    label: { en: Address of this app, fr: Adresse de cette app }
+    description:
+      en: The address you open Docmost at, for example http://192.168.1.10:3010.
+      fr: L'adresse à laquelle vous ouvrez Docmost, par exemple http://192.168.1.10:3010.
