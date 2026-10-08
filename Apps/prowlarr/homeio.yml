@@ -1,0 +1,13 @@
+id: prowlarr
+name: "Prowlarr"
+tagline:
+  en: "One place for all your indexers."
+  fr: "Un seul endroit pour tous vos indexeurs."
+description:
+  en: "Prowlarr manages the indexers for Sonarr, Radarr and Lidarr in one place and keeps them in sync, so you add a source once. The first visit asks you to create a login."
+  fr: "Prowlarr gère les indexeurs de Sonarr, Radarr et Lidarr au même endroit et les garde synchronisés : vous ajoutez une source une seule fois. La première visite vous demande de créer un identifiant."
+category: media
+developer: "Prowlarr"
+website: https://prowlarr.com
+main: prowlarr
+port: 9696

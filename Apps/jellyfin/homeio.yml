@@ -8,13 +8,13 @@ description:
     Jellyfin is a free media server. Point it at your films, series, music and photos
     and it builds a library with posters and details, then streams it to any browser,
     phone or TV. No account with anyone else, no tracking. The first person to open it
-    sets up the admin account; put your files in the media folder.
+    sets up the admin account; put your files in the Media folder of your server.
   fr: |
     Jellyfin est un serveur multimédia libre. Indiquez-lui vos films, séries, musique et
     photos : il construit une bibliothèque avec affiches et détails, puis la diffuse sur
     n'importe quel navigateur, téléphone ou TV. Aucun compte chez un tiers, aucun suivi.
     La première personne qui l'ouvre crée le compte administrateur ; placez vos fichiers
-    dans le dossier media.
+    dans le dossier Media de votre serveur.
 category: media
 developer: Jellyfin
 website: https://jellyfin.org

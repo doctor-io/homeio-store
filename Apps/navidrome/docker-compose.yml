@@ -1,0 +1,20 @@
+name: navidrome
+services:
+  navidrome:
+    image: deluan/navidrome:0.64.2
+    container_name: navidrome
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      ND_ENABLEINSIGHTSCOLLECTOR: "false"
+    ports:
+      - target: 4533
+        published: "4533"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+      - type: bind
+        source: /DATA/Media/Music
+        target: /music

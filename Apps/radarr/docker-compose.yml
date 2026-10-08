@@ -1,0 +1,23 @@
+name: radarr
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:6.4.4
+    container_name: radarr
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+    ports:
+      - target: 7878
+        published: "7878"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+      - type: bind
+        source: /DATA/Media
+        target: /media
+      - type: bind
+        source: /DATA/Download
+        target: /downloads

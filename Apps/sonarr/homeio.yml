@@ -1,0 +1,13 @@
+id: sonarr
+name: "Sonarr"
+tagline:
+  en: "Finds and organises your TV series automatically."
+  fr: "Trouve et range vos séries TV automatiquement."
+description:
+  en: "Sonarr watches your favourite series, asks your indexers and download client for new episodes, then renames and files them in your media folder, ready for Jellyfin. Connect it to Prowlarr and qBittorrent from its settings; the first visit asks you to create a login."
+  fr: "Sonarr suit vos séries préférées, interroge vos indexeurs et votre client de téléchargement pour les nouveaux épisodes, puis les renomme et les range dans votre dossier média, prêts pour Jellyfin. Reliez-le à Prowlarr et qBittorrent depuis ses réglages ; la première visite vous demande de créer un identifiant."
+category: media
+developer: "Sonarr"
+website: https://sonarr.tv
+main: sonarr
+port: 8989

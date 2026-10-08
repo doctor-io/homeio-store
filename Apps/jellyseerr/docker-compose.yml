@@ -1,0 +1,15 @@
+name: jellyseerr
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:2.7.3
+    container_name: jellyseerr
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - target: 5055
+        published: "5055"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /app/config

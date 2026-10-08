@@ -17,5 +17,5 @@ services:
         source: /DATA/AppData/$AppID/cache
         target: /cache
       - type: bind
-        source: /DATA/AppData/$AppID/media
+        source: /DATA/Media
         target: /media

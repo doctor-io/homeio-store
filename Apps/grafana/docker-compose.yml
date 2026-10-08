@@ -1,0 +1,30 @@
+name: grafana
+services:
+  grafana:
+    image: grafana/grafana:13.2.3
+    container_name: grafana
+    restart: unless-stopped
+    user: "472:472"
+    # The admin password is made on first start and kept next to the data, so
+    # every install has its own; the default admin/admin is never used.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        f=/var/lib/grafana/admin_password
+        if [ ! -s "$$f" ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          read -r b < /proc/sys/kernel/random/uuid
+          printf '%s%s' "$$a" "$$b" | tr -d - > "$$f"
+        fi
+        export GF_SECURITY_ADMIN_PASSWORD="$$(cat $$f)"
+        exec /run.sh
+    environment:
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    ports:
+      - target: 3000
+        published: "3011"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/lib/grafana

@@ -1,0 +1,13 @@
+id: grafana
+name: "Grafana"
+tagline:
+  en: "Dashboards for any metric you collect."
+  fr: "Des tableaux de bord pour toutes vos mesures."
+description:
+  en: "Grafana turns metrics and logs into live dashboards and alerts. It starts with an admin account called admin and a password made for your install: read it in the file admin_password in the app's data folder, then change it in your profile."
+  fr: "Grafana transforme mesures et journaux en tableaux de bord et alertes en direct. Il démarre avec un compte admin et un mot de passe généré pour votre installation : lisez-le dans le fichier admin_password du dossier de données de l'app, puis changez-le dans votre profil."
+category: development
+developer: "Grafana Labs"
+website: https://grafana.com
+main: grafana
+port: 3000

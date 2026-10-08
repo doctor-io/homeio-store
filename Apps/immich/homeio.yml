@@ -1,0 +1,13 @@
+id: immich
+name: "Immich"
+tagline:
+  en: "Your photos and videos, backed up from your phone."
+  fr: "Vos photos et vidéos, sauvegardées depuis votre téléphone."
+description:
+  en: "Immich is a private photo and video library with phone backup, face and object search, albums and sharing. It runs four small services together and keeps its database private with a password made for your install. The first person to open it creates the admin account."
+  fr: "Immich est une photothèque privée avec sauvegarde depuis le téléphone, recherche par visage et objet, albums et partage. Il fait tourner quatre petits services ensemble et garde sa base de données privée avec un mot de passe généré pour votre installation. La première personne qui l'ouvre crée le compte administrateur."
+category: productivity
+developer: "Immich"
+website: https://immich.app
+main: immich
+port: 2283

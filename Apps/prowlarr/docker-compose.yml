@@ -1,0 +1,17 @@
+name: prowlarr
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:2.6.5
+    container_name: prowlarr
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+    ports:
+      - target: 9696
+        published: "9696"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config

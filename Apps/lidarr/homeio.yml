@@ -1,0 +1,13 @@
+id: lidarr
+name: "Lidarr"
+tagline:
+  en: "Finds and organises your music automatically."
+  fr: "Trouve et range votre musique automatiquement."
+description:
+  en: "Lidarr follows your favourite artists, grabs new albums through your indexers and download client, then tags and files them in your media folder for Navidrome or Jellyfin. The first visit asks you to create a login."
+  fr: "Lidarr suit vos artistes préférés, récupère les nouveaux albums via vos indexeurs et votre client de téléchargement, puis les étiquette et les range dans votre dossier média pour Navidrome ou Jellyfin. La première visite vous demande de créer un identifiant."
+category: media
+developer: "Lidarr"
+website: https://lidarr.audio
+main: lidarr
+port: 8686

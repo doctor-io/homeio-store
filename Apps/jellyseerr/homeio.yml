@@ -1,0 +1,13 @@
+id: jellyseerr
+name: "Jellyseerr"
+tagline:
+  en: "Let your family ask for movies and shows."
+  fr: "Laissez votre famille demander des films et séries."
+description:
+  en: "Jellyseerr is a request page for Jellyfin: people sign in with their Jellyfin account, browse what exists and ask for what is missing, and Sonarr and Radarr fetch it. You sign in with your Jellyfin admin account on first start."
+  fr: "Jellyseerr est une page de demandes pour Jellyfin : chacun se connecte avec son compte Jellyfin, parcourt ce qui existe et demande ce qui manque, puis Sonarr et Radarr le récupèrent. À la première ouverture, connectez-vous avec votre compte administrateur Jellyfin."
+category: media
+developer: "Fallenbagel"
+website: https://github.com/Fallenbagel/jellyseerr
+main: jellyseerr
+port: 5055

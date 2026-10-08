@@ -1,0 +1,13 @@
+id: radarr
+name: "Radarr"
+tagline:
+  en: "Finds and organises your movies automatically."
+  fr: "Trouve et range vos films automatiquement."
+description:
+  en: "Radarr does for movies what Sonarr does for series: it grabs the releases you want through your indexers and download client, then renames and files them in your media folder for Jellyfin. The first visit asks you to create a login."
+  fr: "Radarr fait pour les films ce que Sonarr fait pour les séries : il récupère les versions voulues via vos indexeurs et votre client de téléchargement, puis les renomme et les range dans votre dossier média pour Jellyfin. La première visite vous demande de créer un identifiant."
+category: media
+developer: "Radarr"
+website: https://radarr.video
+main: radarr
+port: 7878

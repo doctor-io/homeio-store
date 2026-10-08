@@ -1,0 +1,13 @@
+id: qbittorrent
+name: "qBittorrent"
+tagline:
+  en: "A torrent client with a clean web interface."
+  fr: "Un client torrent avec une interface web soignée."
+description:
+  en: "qBittorrent downloads torrents into your Download folder and is the client Sonarr, Radarr and Lidarr hand their downloads to. The first start makes a temporary admin password and writes it to the app's logs: read it there, then set your own in Settings, Web UI."
+  fr: "qBittorrent télécharge les torrents dans votre dossier Download et sert de client à Sonarr, Radarr et Lidarr. Le premier démarrage crée un mot de passe administrateur temporaire et l'écrit dans les journaux de l'app : lisez-le là, puis définissez le vôtre dans Réglages, Web UI."
+category: media
+developer: "qBittorrent"
+website: https://www.qbittorrent.org
+main: qbittorrent
+port: 8080

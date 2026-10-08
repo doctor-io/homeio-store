@@ -1,0 +1,13 @@
+id: navidrome
+name: "Navidrome"
+tagline:
+  en: "Your own music streaming service."
+  fr: "Votre propre service de streaming musical."
+description:
+  en: "Navidrome serves the music in your Media/Music folder to any browser or Subsonic-compatible app, with playlists, stars and play counts. The first person to open it creates the admin account."
+  fr: "Navidrome diffuse la musique de votre dossier Media/Music sur n'importe quel navigateur ou app compatible Subsonic, avec playlists, favoris et compteurs d'écoute. La première personne qui l'ouvre crée le compte administrateur."
+category: media
+developer: "Navidrome"
+website: https://www.navidrome.org
+main: navidrome
+port: 4533

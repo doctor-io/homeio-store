@@ -1,0 +1,13 @@
+id: metube
+name: "MeTube"
+tagline:
+  en: "Download videos and music from the web."
+  fr: "Téléchargez vidéos et musique depuis le web."
+description:
+  en: "MeTube is a web page on top of yt-dlp: paste a link from YouTube and hundreds of other sites, pick video or audio, and the file lands in your Media/Videos folder, ready for Jellyfin. It has no login, so keep it on your home network."
+  fr: "MeTube est une page web posée sur yt-dlp : collez un lien YouTube ou de centaines d'autres sites, choisissez vidéo ou audio, et le fichier arrive dans votre dossier Media/Videos, prêt pour Jellyfin. Il n'a pas de connexion : gardez-le sur votre réseau local."
+category: media
+developer: "alexta69"
+website: https://github.com/alexta69/metube
+main: metube
+port: 8081

@@ -1,0 +1,22 @@
+name: metube
+services:
+  metube:
+    image: ghcr.io/alexta69/metube:2026.09.29
+    container_name: metube
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      DOWNLOAD_DIR: /downloads
+      STATE_DIR: /state
+      TEMP_DIR: /tmp
+    ports:
+      - target: 8081
+        published: "8101"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/Media/Videos
+        target: /downloads
+      - type: bind
+        source: /DATA/AppData/$AppID/state
+        target: /state

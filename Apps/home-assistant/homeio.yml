@@ -1,0 +1,13 @@
+id: home-assistant
+name: "Home Assistant"
+tagline:
+  en: "Control your smart home, privately."
+  fr: "Pilotez votre maison connectée, en privé."
+description:
+  en: "Home Assistant brings your lights, sensors, plugs and cameras together in one place, with automations that run on your own server and nothing sent to a cloud. The first person to open it creates the account. Devices that need to be discovered on the network may need host networking."
+  fr: "Home Assistant réunit lumières, capteurs, prises et caméras au même endroit, avec des automatisations qui tournent sur votre serveur et rien envoyé dans un cloud. La première personne qui l'ouvre crée le compte. Les appareils à découvrir sur le réseau peuvent demander le mode réseau hôte."
+category: productivity
+developer: "Home Assistant"
+website: https://www.home-assistant.io
+main: home-assistant
+port: 8123
