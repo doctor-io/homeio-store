@@ -4,6 +4,7 @@ services:
     image: libretranslate/libretranslate:v1.9.6
     container_name: libretranslate
     restart: unless-stopped
+    user: "1032:65534"
     environment:
       LT_LOAD_ONLY: ${LT_LOAD_ONLY:-en,fr,es,de}
     ports:

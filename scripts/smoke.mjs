@@ -3,7 +3,7 @@
 // --keep leaves the apps running, to take screenshots; `--down` stops whatever --keep left.
 import { execFileSync } from "node:child_process";
 import net from "node:net";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import yaml from "js-yaml";
@@ -40,6 +40,23 @@ async function freePort(start) {
   }
 }
 
+/**
+ * Docker creates bind mounts owned by root. Homeio hands them to the service's
+ * `user:` before it starts, so do the same here; a service without `user:` is
+ * left as it is, which is also what happens on a real install.
+ */
+function chownBindMounts(composeText, tmp) {
+  for (const service of Object.values(yaml.load(composeText.replaceAll("$AppID", "app")).services ?? {})) {
+    const owner = String(service.user ?? "");
+    if (!/^\d+:\d+$/.test(owner) || owner === "0:0") continue;
+    for (const volume of service.volumes ?? []) {
+      if (volume.type !== "bind" || !volume.source.startsWith(tmp)) continue;
+      mkdirSync(volume.source, { recursive: true });
+      docker(["run", "--rm", "-v", `${volume.source}:/d`, "alpine:3.20", "chown", "-R", owner, "/d"]);
+    }
+  }
+}
+
 async function waitForHttp(url, timeoutMs) {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
@@ -69,6 +86,7 @@ for (const id of ids) {
     .replace(/^\s*container_name: .*\n/m, "");
   const composePath = path.join(tmp, "docker-compose.yml");
   writeFileSync(composePath, compose);
+  chownBindMounts(compose, tmp);
   const env = { ...process.env, AppID: id };
 
   try {

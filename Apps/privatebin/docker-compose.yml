@@ -4,6 +4,7 @@ services:
     image: privatebin/nginx-fpm-alpine:2.0.6
     container_name: privatebin
     restart: unless-stopped
+    user: "65534:82"
     ports:
       - target: 8080
         published: "8084"
