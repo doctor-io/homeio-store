@@ -1,0 +1,23 @@
+id: romm
+name: RomM
+tagline:
+  en: Your retro game library, with covers and play-in-browser.
+  fr: Votre ludothèque rétro, avec jaquettes et jeu dans le navigateur.
+description:
+  en: |
+    RomM scans your ROM collection and turns it into a clean library with covers,
+    descriptions and screenshots. Play many consoles right in the browser, keep your
+    saves and states on the server, and give each person their own account.
+    The first person to open it creates the admin account. Drop your ROMs in the
+    library/roms folder, one folder per platform.
+  fr: |
+    RomM analyse votre collection de ROMs et la transforme en bibliothèque soignée avec
+    jaquettes, descriptions et captures. Jouez à de nombreuses consoles directement dans
+    le navigateur, gardez vos sauvegardes sur le serveur et donnez un compte à chacun.
+    La première personne qui l'ouvre crée le compte administrateur. Déposez vos ROMs
+    dans le dossier library/roms, un dossier par plateforme.
+category: games
+developer: rommapp
+website: https://romm.app
+main: romm
+port: 8080

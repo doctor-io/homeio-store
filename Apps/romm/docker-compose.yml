@@ -1,0 +1,84 @@
+name: romm
+services:
+  romm:
+    image: rommapp/romm:5.3.1
+    container_name: romm
+    restart: unless-stopped
+    # A signing key made on first start and kept in the config folder, so every
+    # install has its own.
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        f=/romm/config/.auth_key
+        if [ ! -s "$$f" ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          read -r b < /proc/sys/kernel/random/uuid
+          printf '%s%s' "$${a//-/}" "$${b//-/}" > "$$f"
+        fi
+        export ROMM_AUTH_SECRET_KEY="$$(cat $$f)"
+        export DB_PASSWD="$$(cat /secrets/db_pass)"
+        exec /docker-entrypoint.sh /init
+    environment:
+      DB_HOST: romm-db
+      DB_NAME: romm
+      DB_USER: root
+      HASHEOUS_API_ENABLED: "true"
+    ports:
+      - target: 8080
+        published: "8095"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/resources
+        target: /romm/resources
+      - type: bind
+        source: /DATA/AppData/$AppID/redis
+        target: /redis-data
+      - type: bind
+        source: /DATA/AppData/$AppID/library
+        target: /romm/library
+      - type: bind
+        source: /DATA/AppData/$AppID/assets
+        target: /romm/assets
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /romm/config
+      - type: bind
+        source: /DATA/AppData/$AppID/secrets
+        target: /secrets
+    depends_on:
+      romm-db:
+        condition: service_healthy
+
+  # Only reachable from this stack. It makes its own password on first start and
+  # shares it with RomM through the secrets folder, so every install has its own.
+  romm-db:
+    image: mariadb:11.4.13
+    container_name: romm-db
+    restart: unless-stopped
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        f=/secrets/db_pass
+        if [ ! -s "$$f" ]; then
+          read -r a < /proc/sys/kernel/random/uuid
+          printf '%s' "$${a//-/}" > "$$f"
+        fi
+        export MARIADB_ROOT_PASSWORD="$$(cat $$f)"
+        exec docker-entrypoint.sh mariadbd
+    environment:
+      MARIADB_DATABASE: romm
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/mysql
+      - type: bind
+        source: /DATA/AppData/$AppID/secrets
+        target: /secrets
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 30s
+      start_interval: 5s
+      interval: 10s
+      timeout: 5s
+      retries: 10
