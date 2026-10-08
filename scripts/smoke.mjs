@@ -40,6 +40,16 @@ async function freePort(start) {
   }
 }
 
+/** Files a container wrote may belong to another user, so let Docker remove them. */
+function removeTmp(tmp) {
+  try {
+    rmSync(tmp, { recursive: true, force: true });
+  } catch {
+    try { docker(["run", "--rm", "-v", `${tmp}:/d`, "alpine:3.20", "sh", "-c", "rm -rf /d/* /d/.[!.]*"]); } catch {}
+    try { rmSync(tmp, { recursive: true, force: true }); } catch {}
+  }
+}
+
 /**
  * Docker creates bind mounts owned by root. Homeio hands them to the service's
  * `user:` before it starts, so do the same here; a service without `user:` is
@@ -108,7 +118,7 @@ for (const id of ids) {
   } finally {
     if (!keep) {
       try { docker(["compose", "-p", project, "-f", composePath, "down", "-v"], { env }); } catch {}
-      rmSync(tmp, { recursive: true, force: true });
+      removeTmp(tmp);
       // A CI runner's disk does not hold every image of a big change at once.
       if (process.env.CI) { try { docker(["image", "prune", "-af"]); } catch {} }
     }
