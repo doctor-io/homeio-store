@@ -1,0 +1,13 @@
+id: vikunja
+name: "Vikunja"
+tagline:
+  en: "Plan tasks and projects with lists, boards and calendars."
+  fr: "Planifiez tâches et projets avec listes, tableaux et calendriers."
+description:
+  en: "Vikunja is a to-do app for individuals and teams. Organise tasks in lists, kanban boards, Gantt charts or a calendar, set reminders and due dates, and share projects with others."
+  fr: "Vikunja est une app de tâches pour particuliers et équipes. Organisez vos tâches en listes, tableaux kanban, diagrammes de Gantt ou calendrier, ajoutez rappels et échéances, et partagez vos projets."
+category: productivity
+developer: "Vikunja"
+website: https://vikunja.io
+main: vikunja
+port: 3456

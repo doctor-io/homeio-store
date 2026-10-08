@@ -1,0 +1,14 @@
+name: trilium
+services:
+  trilium:
+    image: triliumnext/trilium:v0.106.0
+    container_name: trilium
+    restart: unless-stopped
+    ports:
+      - target: 8080
+        published: "8089"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /home/node/trilium-data

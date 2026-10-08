@@ -1,0 +1,14 @@
+name: vaultwarden
+services:
+  vaultwarden:
+    image: vaultwarden/server:1.37.4
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - target: 80
+        published: "8085"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data

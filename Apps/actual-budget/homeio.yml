@@ -1,0 +1,13 @@
+id: actual-budget
+name: "Actual Budget"
+tagline:
+  en: "Track your money and plan a budget that sticks."
+  fr: "Suivez votre argent et planifiez un budget qui tient."
+description:
+  en: "Actual Budget is a fast, privacy-friendly personal finance app built around envelope budgeting. Import your bank files, categorise spending and see where your money goes. Your data stays on your own server."
+  fr: "Actual Budget est une app de finances personnelles rapide et respectueuse de la vie privée, fondée sur le budget par enveloppes. Importez vos fichiers bancaires, classez vos dépenses et voyez où va votre argent. Vos données restent sur votre propre serveur."
+category: productivity
+developer: "Actual"
+website: https://actualbudget.org
+main: actual-budget
+port: 5006

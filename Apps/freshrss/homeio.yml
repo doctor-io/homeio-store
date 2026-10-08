@@ -1,0 +1,13 @@
+id: freshrss
+name: "FreshRSS"
+tagline:
+  en: "Follow all your favourite sites in one feed reader."
+  fr: "Suivez tous vos sites préférés dans un seul lecteur de flux."
+description:
+  en: "FreshRSS is a self-hosted RSS reader. Subscribe to blogs and news sites, read them in one clean timeline, search and filter articles, and use your favourite mobile app through its API. The first visit runs a short installer."
+  fr: "FreshRSS est un lecteur RSS auto-hébergé. Abonnez-vous à des blogs et sites d'actualité, lisez-les dans une seule chronologie claire, cherchez et filtrez les articles, et utilisez votre app mobile préférée grâce à son API. La première visite lance un court installateur."
+category: productivity
+developer: "FreshRSS"
+website: https://freshrss.org
+main: freshrss
+port: 80

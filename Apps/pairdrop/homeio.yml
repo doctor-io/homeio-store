@@ -1,0 +1,13 @@
+id: pairdrop
+name: "PairDrop"
+tagline:
+  en: "Send files and text between your devices, instantly."
+  fr: "Envoyez fichiers et textes entre vos appareils, instantanément."
+description:
+  en: "PairDrop moves files and text between devices on the same network straight from the browser, with no app to install and no account. Open it on two devices and drop a file on the other one. It works on phones, tablets and computers."
+  fr: "PairDrop envoie fichiers et textes entre appareils du même réseau directement depuis le navigateur, sans app à installer ni compte. Ouvrez-le sur deux appareils et déposez un fichier sur l'autre. Il fonctionne sur téléphones, tablettes et ordinateurs."
+category: productivity
+developer: "PairDrop"
+website: https://pairdrop.net
+main: pairdrop
+port: 3000

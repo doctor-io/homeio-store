@@ -1,0 +1,13 @@
+name: pairdrop
+services:
+  pairdrop:
+    image: lscr.io/linuxserver/pairdrop:1.11.2
+    container_name: pairdrop
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+    ports:
+      - target: 3000
+        published: "3005"
+        protocol: tcp

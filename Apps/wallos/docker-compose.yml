@@ -1,0 +1,17 @@
+name: wallos
+services:
+  wallos:
+    image: bellamy/wallos:5.8.3
+    container_name: wallos
+    restart: unless-stopped
+    ports:
+      - target: 80
+        published: "8088"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/www/html/db
+      - type: bind
+        source: /DATA/AppData/$AppID/logos
+        target: /var/www/html/images/uploads/logos

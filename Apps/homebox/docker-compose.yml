@@ -1,0 +1,25 @@
+name: homebox
+services:
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:0.26.2
+    container_name: homebox
+    restart: unless-stopped
+    # Homebox refuses to start without a secret of its own. One shared by every
+    # install would not be a secret, so each install makes its own the first
+    # time it starts and keeps it with its data.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        f=/data/.pepper
+        [ -s $$f ] || { read a < /proc/sys/kernel/random/uuid; read b < /proc/sys/kernel/random/uuid; echo "$$a$$b" > $$f; }
+        read HBOX_AUTH_API_KEY_PEPPER < $$f
+        export HBOX_AUTH_API_KEY_PEPPER
+        exec /app/api /data/config.yml
+    ports:
+      - target: 7745
+        published: "7745"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data

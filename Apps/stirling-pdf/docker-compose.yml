@@ -1,0 +1,15 @@
+name: stirling-pdf
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:3.1.0
+    container_name: stirling-pdf
+    restart: unless-stopped
+    # Its default sign-in is admin / stirling for everyone, so the sign-in is
+    # off. Nothing is kept: files are processed and dropped.
+    environment:
+      DOCKER_ENABLE_SECURITY: "false"
+      SECURITY_ENABLELOGIN: "false"
+    ports:
+      - target: 8080
+        published: "8087"
+        protocol: tcp

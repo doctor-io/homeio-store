@@ -1,0 +1,14 @@
+name: nextcloud
+services:
+  nextcloud:
+    image: nextcloud:35.0.1
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - target: 80
+        published: "8086"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/html
+        target: /var/www/html

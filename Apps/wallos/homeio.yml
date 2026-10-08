@@ -1,0 +1,13 @@
+id: wallos
+name: "Wallos"
+tagline:
+  en: "Keep track of your subscriptions and what they cost."
+  fr: "Gardez la trace de vos abonnements et de leur coût."
+description:
+  en: "Wallos is a personal subscription tracker. List your recurring payments, see what you spend each month and year, get reminders before renewals and sort everything by category. The first visit creates your account."
+  fr: "Wallos est un suivi d'abonnements personnel. Listez vos paiements récurrents, voyez ce que vous dépensez chaque mois et chaque année, recevez des rappels avant les renouvellements et classez tout par catégorie. La première visite crée votre compte."
+category: productivity
+developer: "Miguel Ribeiro"
+website: https://wallosapp.com
+main: wallos
+port: 80

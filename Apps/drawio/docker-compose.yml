@@ -1,0 +1,10 @@
+name: drawio
+services:
+  drawio:
+    image: jgraph/drawio:32.3.0
+    container_name: drawio
+    restart: unless-stopped
+    ports:
+      - target: 8080
+        published: "8090"
+        protocol: tcp

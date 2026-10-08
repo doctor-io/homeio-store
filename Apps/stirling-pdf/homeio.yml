@@ -1,0 +1,13 @@
+id: stirling-pdf
+name: "Stirling-PDF"
+tagline:
+  en: "Merge, split, convert and edit PDFs without uploading them."
+  fr: "Fusionnez, découpez, convertissez et modifiez vos PDF sans les envoyer ailleurs."
+description:
+  en: "Stirling-PDF is a toolbox for PDF files: merge and split, rotate, compress, convert to and from images and Office documents, add watermarks, sign and run OCR. Files are processed on your server and never leave it. There is no sign-in: anyone on your network can use it."
+  fr: "Stirling-PDF est une boîte à outils pour les fichiers PDF : fusion et découpe, rotation, compression, conversion depuis et vers des images et documents Office, filigranes, signature et OCR. Les fichiers sont traités sur votre serveur et n'en sortent jamais. Il n'y a pas de connexion : toute personne de votre réseau peut l'utiliser."
+category: productivity
+developer: "Stirling PDF"
+website: https://www.stirlingpdf.com
+main: stirling-pdf
+port: 8080

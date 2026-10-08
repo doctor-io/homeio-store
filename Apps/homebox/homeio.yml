@@ -1,0 +1,13 @@
+id: homebox
+name: "Homebox"
+tagline:
+  en: "Know what you own, where it is and what it cost."
+  fr: "Sachez ce que vous possédez, où c'est rangé et ce que ça a coûté."
+description:
+  en: "Homebox is an inventory for your home. Catalogue your belongings with photos, labels, locations, warranties and receipts, and find anything in seconds. The first visit lets you create your account."
+  fr: "Homebox est un inventaire pour votre maison. Cataloguez vos affaires avec photos, étiquettes, emplacements, garanties et factures, et retrouvez tout en quelques secondes. La première visite vous permet de créer votre compte."
+category: productivity
+developer: "Sysadmins Media"
+website: https://homebox.software
+main: homebox
+port: 7745

@@ -1,0 +1,13 @@
+id: drawio
+name: "draw.io"
+tagline:
+  en: "Draw diagrams, flowcharts and schematics in your browser."
+  fr: "Dessinez diagrammes, organigrammes et schémas dans votre navigateur."
+description:
+  en: "draw.io is a full diagramming tool: flowcharts, network maps, UML, floor plans and more. It runs in your browser, saves to your device, and exports to PNG, SVG and PDF."
+  fr: "draw.io est un outil de diagrammes complet : organigrammes, schémas réseau, UML, plans et plus encore. Il s'exécute dans votre navigateur, enregistre sur votre appareil et exporte en PNG, SVG et PDF."
+category: productivity
+developer: "JGraph"
+website: https://www.drawio.com
+main: drawio
+port: 8080

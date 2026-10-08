@@ -1,0 +1,13 @@
+id: trilium
+name: "Trilium Notes"
+tagline:
+  en: "Build a personal knowledge base with hierarchical notes."
+  fr: "Construisez une base de connaissances personnelle avec des notes hiérarchiques."
+description:
+  en: "Trilium is a note-taking app for large personal knowledge bases. Organise notes in a tree, link them together, add attributes and scripts, and keep everything in a database you control."
+  fr: "Trilium est une app de prise de notes pour de grandes bases de connaissances personnelles. Organisez vos notes en arbre, reliez-les entre elles, ajoutez des attributs et des scripts, et gardez tout dans une base que vous contrôlez."
+category: productivity
+developer: "TriliumNext"
+website: https://github.com/TriliumNext/Trilium
+main: trilium
+port: 8080

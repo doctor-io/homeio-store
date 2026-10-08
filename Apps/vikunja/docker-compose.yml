@@ -1,0 +1,24 @@
+name: vikunja
+services:
+  vikunja:
+    image: vikunja/vikunja:2.7.0
+    container_name: vikunja
+    restart: unless-stopped
+    user: "1000:1000"
+    environment:
+      VIKUNJA_DATABASE_TYPE: sqlite
+      VIKUNJA_DATABASE_PATH: /db/vikunja.db
+      # The app is served from the same address as its API, so no CORS, and no
+      # public URL to ask for.
+      VIKUNJA_CORS_ENABLE: "false"
+    ports:
+      - target: 3456
+        published: "3456"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /db
+      - type: bind
+        source: /DATA/AppData/$AppID/files
+        target: /app/vikunja/files

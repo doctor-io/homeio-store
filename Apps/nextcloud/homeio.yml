@@ -1,0 +1,13 @@
+id: nextcloud
+name: "Nextcloud"
+tagline:
+  en: "Your own cloud for files, calendar and contacts."
+  fr: "Votre propre cloud pour fichiers, agenda et contacts."
+description:
+  en: "Nextcloud stores and syncs your files, calendar, contacts and notes across all your devices, and lets you share them with others. The first visit asks you to create the administrator account."
+  fr: "Nextcloud stocke et synchronise vos fichiers, agenda, contacts et notes sur tous vos appareils, et vous permet de les partager. La première visite vous demande de créer le compte administrateur."
+category: productivity
+developer: "Nextcloud"
+website: https://nextcloud.com
+main: nextcloud
+port: 80

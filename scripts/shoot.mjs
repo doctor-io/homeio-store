@@ -4,6 +4,8 @@
 //   waitfor=<css>        wait until the selector exists
 //   type=<css>::<text>   focus the field and type the text
 //   click=<css>          click the element
+//   mouse=<css|text:..>  real mouse click at the element's centre (text:Foo finds an element by its text)
+//   key=Enter            press Enter
 //   eval=<js>            run a script in the page
 //   log=<js>             same, and print what it returns
 // Needs Google Chrome (CHROME env var to point elsewhere). No npm dependency.
@@ -62,6 +64,20 @@ try {
     const [kind, arg] = [step.slice(0, at), step.slice(at + 1)];
     if (kind === "wait") await sleep(Number(arg));
     else if (kind === "eval") await run(arg);
+    else if (kind === "mouse") {
+      const find = arg.startsWith("text:")
+        ? `[...document.querySelectorAll("*")].filter((e) => e.children.length < 4 && (e.innerText || "").trim().startsWith(${JSON.stringify(arg.slice(5))}))[0]`
+        : `document.querySelector(${JSON.stringify(arg)})`;
+      const at = await run(`(() => { const r = (${find})?.getBoundingClientRect(); return r && { x: r.x + r.width / 2, y: r.y + r.height / 2 }; })()`);
+      if (!at) throw new Error(`nothing to click for "${arg}"`);
+      await send("Input.dispatchMouseEvent", { type: "mouseMoved", ...at });
+      for (const type of ["mousePressed", "mouseReleased"]) await send("Input.dispatchMouseEvent", { type, ...at, button: "left", clickCount: 1 });
+    }
+    else if (kind === "key") {
+      for (const type of ["keyDown", "keyUp"]) {
+        await send("Input.dispatchKeyEvent", { type, key: "Enter", code: "Enter", windowsVirtualKeyCode: 13, text: type === "keyDown" ? "\r" : undefined });
+      }
+    }
     else if (kind === "log") console.log(JSON.stringify(await run(arg)));
     else if (kind === "click") await run(`document.querySelector(${JSON.stringify(arg)})?.click()`);
     else if (kind === "waitfor") {
