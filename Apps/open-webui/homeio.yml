@@ -1,0 +1,25 @@
+id: open-webui
+name: Open WebUI
+tagline:
+  en: A private ChatGPT-style interface for your own models.
+  fr: Une interface façon ChatGPT, privée, pour vos propres modèles.
+description:
+  en: |
+    Open WebUI is a self-hosted chat interface for local and remote language models.
+    Connect it to Ollama or any OpenAI-compatible API, chat with several models,
+    and keep every conversation on your own server.
+  fr: |
+    Open WebUI est une interface de discussion auto-hébergée pour modèles de langage
+    locaux ou distants. Connectez-la à Ollama ou à toute API compatible OpenAI,
+    discutez avec plusieurs modèles et gardez chaque conversation sur votre serveur.
+category: ai
+developer: Open WebUI
+website: https://openwebui.com
+main: open-webui
+port: 8080
+env:
+  OLLAMA_BASE_URL:
+    label: { en: Ollama address, fr: Adresse d'Ollama }
+    description:
+      en: Address of your Ollama server, for example http://192.168.1.10:11434. Leave empty to add a connection later.
+      fr: Adresse de votre serveur Ollama, par exemple http://192.168.1.10:11434. Laissez vide pour ajouter une connexion plus tard.

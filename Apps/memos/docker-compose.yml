@@ -1,0 +1,14 @@
+name: memos
+services:
+  memos:
+    image: neosmemo/memos:0.31.0
+    container_name: memos
+    restart: unless-stopped
+    ports:
+      - target: 5230
+        published: "5230"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/opt/memos

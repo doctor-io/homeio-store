@@ -1,0 +1,16 @@
+name: open-webui
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.11.4
+    container_name: open-webui
+    restart: unless-stopped
+    environment:
+      OLLAMA_BASE_URL: ""
+    ports:
+      - target: 8080
+        published: "3050"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /app/backend/data

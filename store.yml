@@ -1,0 +1,17 @@
+format: 1
+
+categories:
+  - id: games
+    name: { en: Games, fr: Jeux }
+  - id: ai
+    name: { en: AI, fr: IA }
+  - id: development
+    name: { en: Development, fr: Développement }
+  - id: productivity
+    name: { en: Productivity, fr: Productivité }
+
+# Apps shown first in the store, in this order.
+featured:
+  - open-webui
+  - code-server
+  - memos

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "enabledManagers": ["docker-compose", "npm", "github-actions"],
+  "packageRules": [
+    {
+      "matchManagers": ["docker-compose"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["docker-compose"],
+      "matchUpdateTypes": ["minor", "major"],
+      "automerge": false
+    }
+  ]
+}

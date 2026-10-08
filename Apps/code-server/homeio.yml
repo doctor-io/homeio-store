@@ -1,0 +1,24 @@
+id: code-server
+name: code-server
+tagline:
+  en: VS Code in your browser, running on your server.
+  fr: VS Code dans votre navigateur, hébergé sur votre serveur.
+description:
+  en: |
+    code-server runs VS Code on your server so you can code from any device with a
+    browser. Your projects, extensions and settings live next to your other apps.
+  fr: |
+    code-server fait tourner VS Code sur votre serveur : codez depuis n'importe quel
+    appareil doté d'un navigateur. Vos projets, extensions et réglages restent à côté
+    de vos autres apps.
+category: development
+developer: Coder
+website: https://coder.com/docs/code-server
+main: code-server
+port: 8080
+env:
+  PASSWORD:
+    label: { en: Password, fr: Mot de passe }
+    description:
+      en: Password to open the editor. Left empty, a random one is generated in .config/code-server/config.yaml.
+      fr: Mot de passe pour ouvrir l'éditeur. Laissé vide, un mot de passe aléatoire est généré dans .config/code-server/config.yaml.

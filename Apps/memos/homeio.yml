@@ -1,0 +1,18 @@
+id: memos
+name: Memos
+tagline:
+  en: Jot down thoughts in a private, fast timeline.
+  fr: Notez vos idées dans une chronologie privée et rapide.
+description:
+  en: |
+    Memos is a lightweight note-taking service. Write in Markdown, tag as you go,
+    and find anything again with instant search. Everything stays on your own server.
+  fr: |
+    Memos est un service de prise de notes léger. Écrivez en Markdown, ajoutez des
+    tags au fil de l'eau et retrouvez tout avec une recherche instantanée. Tout reste
+    sur votre propre serveur.
+category: productivity
+developer: usememos
+website: https://usememos.com
+main: memos
+port: 5230
