@@ -15,7 +15,7 @@ description:
     Vous vous connectez en admin avec un mot de passe généré pour votre installation :
     lisez-le dans le fichier admin_password du dossier de stockage de l'app, puis
     changez-le dans les réglages.
-category: productivity
+category: media
 developer: PhotoPrism
 website: https://www.photoprism.app
 main: photoprism

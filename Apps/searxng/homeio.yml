@@ -8,7 +8,7 @@ description:
     SearXNG is a metasearch engine that queries dozens of search sites for you and returns the results without ads or tracking. It is also the search backend many AI tools use to browse the web.
   fr: |
     SearXNG est un métamoteur de recherche qui interroge des dizaines de sites à votre place et renvoie les résultats sans publicité ni pistage. C'est aussi le moteur de recherche que de nombreux outils d'IA utilisent pour naviguer sur le web.
-category: ai
+category: productivity
 developer: SearXNG
 website: https://docs.searxng.org
 main: searxng

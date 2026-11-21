@@ -13,7 +13,7 @@ description:
     navigateur ou le téléphone. Il retient où vous vous êtes arrêté, garde un profil par
     personne et télécharge les épisodes de podcast tout seul. La première personne qui
     l'ouvre crée le compte administrateur.
-category: productivity
+category: media
 developer: advplyr
 website: https://www.audiobookshelf.org
 main: audiobookshelf

@@ -12,7 +12,7 @@ description:
     LibreSpeed mesure le débit descendant, montant, le ping et la gigue entre votre
     appareil et votre serveur. Pratique pour savoir si c'est le Wi-Fi ou le câble qui
     ralentit. Pas de compte, pas de suivi, rien ne quitte votre réseau.
-category: development
+category: networking
 developer: LibreSpeed
 website: https://librespeed.org
 main: librespeed

@@ -6,7 +6,7 @@ tagline:
 description:
   en: "Vaultwarden is a lightweight password manager that works with the Bitwarden apps and browser extensions. It stores logins, notes and cards, and syncs them between your devices. The web vault only opens over HTTPS, so reach it through a secure address such as your Cloudflare or Tailscale link."
   fr: "Vaultwarden est un gestionnaire de mots de passe léger, compatible avec les apps et extensions Bitwarden. Il stocke identifiants, notes et cartes, et les synchronise entre vos appareils. Le coffre web ne s'ouvre qu'en HTTPS : passez par une adresse sécurisée, comme votre lien Cloudflare ou Tailscale."
-category: productivity
+category: security
 developer: "Vaultwarden"
 website: https://github.com/dani-garcia/vaultwarden
 main: vaultwarden

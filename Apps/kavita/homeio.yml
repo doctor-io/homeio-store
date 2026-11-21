@@ -12,7 +12,7 @@ description:
     Kavita est un lecteur rapide pour BD, mangas et livres. Indiquez un dossier et il
     construit une bibliothèque soignée avec couvertures, progression de lecture et un
     compte par lecteur. La première personne qui l'ouvre crée le compte administrateur.
-category: productivity
+category: media
 developer: Kavita
 website: https://www.kavitareader.com
 main: kavita

@@ -11,6 +11,16 @@ categories:
     name: { en: Productivity, fr: Productivité }
   - id: media
     name: { en: Media, fr: Médias }
+  - id: files
+    name: { en: Files, fr: Fichiers }
+  - id: home
+    name: { en: Home, fr: Maison }
+  - id: security
+    name: { en: Security, fr: Sécurité }
+  - id: finance
+    name: { en: Finance, fr: Finances }
+  - id: networking
+    name: { en: Networking, fr: Réseau }
 
 # Apps shown first in the store, in this order.
 featured:
